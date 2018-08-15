@@ -15,8 +15,7 @@ class Player extends Component {
 
     return ( 
       <div className="Players-div" style={{background:color}} onClick={this.handleChangeColor}>
-      <h1>{Rank}. {Rookies}</h1><h2>{Pos}</h2>
-      {color === 'green' && <h4>Drafted</h4>}
+        <h1>{Rank}. {Rookies}</h1><h2>{Pos}{color === 'green' && <b> - Drafted</b>}</h2>
       </div>
     );
   }
