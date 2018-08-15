@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './PositionPicker.css';
 
 class PositionPicker extends Component {
 
@@ -8,7 +9,7 @@ class PositionPicker extends Component {
 
   render() {
     return (
-    <div>
+    <div className='picker-div'>
       <select name="positions" onChange={this.handleChange}>
         <option value="All">All</option>
         <option value="QB">QB</option>
