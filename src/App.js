@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './football.svg';
 import './App.css';
 import playersData from './csvjson';
 import Players from './Players';
@@ -42,8 +41,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Draft Assistant</h1>
+          <h1 className="App-title">DRAFT ASSISTANT</h1>
           <PositionPicker onFilterList={this.handleFilterChange}/>
         </header>
           {players.map(player => <Players
