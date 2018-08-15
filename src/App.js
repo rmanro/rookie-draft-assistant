@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import playersData from './csvjson';
-import Players from './Players';
+import Player from './Player';
 import PositionPicker from './PositionPicker';
 
 class App extends Component {
@@ -44,7 +44,7 @@ class App extends Component {
           <h1 className="App-title">DRAFT ASSISTANT</h1>
           <PositionPicker onFilterList={this.handleFilterChange}/>
         </header>
-          {players.map(player => <Players
+          {players.map(player => <Player
           player={player}
           key={player.Rank}
           onColorChange={this.handleColorChange}

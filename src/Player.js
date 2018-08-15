@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Players.css';
+import './Player.css';
 
 class Player extends Component {
 
@@ -15,7 +15,7 @@ class Player extends Component {
 
     return ( 
       <div className="Players-div" style={{background:color}} onClick={this.handleChangeColor}>
-        <h1>{Rank}. {Rookies}</h1><h2>{Pos}{color === 'green' && <b> - Drafted</b>}</h2>
+        <h1>{Rank}. {Rookies}</h1><h2>{Pos}{color === 'green' && <strong> - Drafted</strong>}</h2>
       </div>
     );
   }
