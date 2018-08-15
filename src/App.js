@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './football.svg';
 import './App.css';
-import players from './csvjson';
+import playersData from './csvjson';
 import Players from './Players';
 import PositionPicker from './PositionPicker';
 
@@ -12,13 +12,29 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    this.setState({ players: players });
+    this.setState({ 
+      players: playersData.map(player => Object.assign({}, player, { color: 'white', visible: true }))
+    });
   }
 
   handleFilterChange = (position) => {
-    if (position === 'All') this.setState({ players: players })
+    if (position === 'All') 
+      this.setState({ 
+        players: this.state.players.map(player => Object.assign({}, player, { visible: true }))
+      });
     else
-    this.setState({ players: players.filter(player => player.Pos.includes(position)) });
+    this.setState({ players: this.state.players.map(player => 
+      (player.Pos.includes(position)) ?
+        Object.assign({}, player, { visible: true })
+      :
+        Object.assign({}, player, { visible: false })
+      )});
+  }
+
+  handleColorChange = (color, rank) => {
+    this.setState({ players: this.state.players.map(player => 
+      (player.Rank === rank) ? Object.assign({}, player, { color: color }) : player 
+    )});
   }
 
   render() {
@@ -33,6 +49,7 @@ class App extends Component {
           {players.map(player => <Players
           player={player}
           key={player.Rank}
+          onColorChange={this.handleColorChange}
           />)}
       </div>
     );

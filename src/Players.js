@@ -3,21 +3,20 @@ import './Players.css';
 
 class Player extends Component {
 
-  state = {
-    color: 'white'
-  };
-
-  changeColor = () => {
-    const newColor = this.state.color === 'white' ? 'green' : 'white';
-    this.setState({ color: newColor });
+  handleChangeColor = () => {
+    const newColor = this.props.player.color === 'white' ? 'green' : 'white';
+    this.props.onColorChange(newColor, this.props.player.Rank);
   }
   
   render() {
-    const { Rookies, Rank, Pos } = this.props.player;
+    const { Rookies, Rank, Pos, color, visible } = this.props.player;
+
+    if (!visible) return null;
+
     return ( 
-      <div className="Players-div" style={{background:this.state.color}} onClick={this.changeColor}>
+      <div className="Players-div" style={{background:color}} onClick={this.handleChangeColor}>
       <h1>{Rank}. {Rookies}</h1><h2>{Pos}</h2>
-      {this.state.color === 'green' && <h4>Drafted</h4>}
+      {color === 'green' && <h4>Drafted</h4>}
       </div>
     );
   }
