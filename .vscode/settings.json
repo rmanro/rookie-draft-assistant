@@ -3,6 +3,9 @@
     "csvjson",
     "homescreen",
     "keyframes",
+    "onstatechange",
+    "onupdatefound",
+    "precached",
     "unmount",
     "webfonts"
   ]
