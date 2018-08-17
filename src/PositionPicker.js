@@ -10,13 +10,11 @@ class PositionPicker extends Component {
   render() {
     return (
     <div className='picker-div'>
-      <select name="positions" onChange={this.handleChange}>
-        <option value="All">All</option>
-        <option value="QB">QB</option>
-        <option value="RB">RB</option>
-        <option value="WR">WR</option>
-        <option value="TE">TE</option>
-      </select>
+        <button value="All" onClick={this.handleChange}>All</button>
+        <button value="QB" onClick={this.handleChange}>QB</button>
+        <button value="RB" onClick={this.handleChange}>RB</button>
+        <button value="WR" onClick={this.handleChange}>WR</button>
+        <button value="TE" onClick={this.handleChange}>TE</button>
     </div>
   );
   }
