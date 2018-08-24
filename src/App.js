@@ -3,6 +3,7 @@ import './App.css';
 import playersData from './csvjson';
 import Player from './Player';
 import PositionPicker from './PositionPicker';
+import AppBar from '@material-ui/core/AppBar';
 
 class App extends Component {
 
@@ -38,12 +39,12 @@ class App extends Component {
 
   render() {
     const { players } = this.state;
+
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">DRAFT ASSISTANT</h1>
+        <AppBar position="sticky" color="default">
           <PositionPicker onFilterList={this.handleFilterChange}/>
-        </header>
+        </AppBar>
           {players.map(player => <Player
           player={player}
           key={player.Rank}

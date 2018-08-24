@@ -1,11 +1,12 @@
 .App {
   text-align: center;
+  font-family: Roboto, sans-serif;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #212121;
   padding: 15px;
-  color: white;
+  color: #fff;
 }
 
 .App-title {

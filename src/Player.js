@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Card from '@material-ui/core/Card';
 import './Player.css';
 
 class Player extends Component {
 
   handleChangeColor = () => {
-    const newColor = this.props.player.color === 'white' ? 'green' : 'white';
+    const newColor = this.props.player.color === 'white' ? '#4CAF50' : 'white';
     this.props.onColorChange(newColor, this.props.player.Rank);
   }
   
@@ -14,9 +15,9 @@ class Player extends Component {
     if (!visible) return null;
 
     return ( 
-      <div className="Players-div" style={{background:color}} onClick={this.handleChangeColor}>
-        <h1>{Rank}. {Rookies}</h1><h2>{Pos}{color === 'green' && <strong> - Drafted</strong>}</h2>
-      </div>
+      <Card className="Players-div" style={{background:color}} onClick={this.handleChangeColor}>
+        <h1>{Rank}. {Rookies}</h1><h2>{Pos}{color === '#4CAF50' && <strong> - Drafted</strong>}</h2>
+      </Card>
     );
   }
 }

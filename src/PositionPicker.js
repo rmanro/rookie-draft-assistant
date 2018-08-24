@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 import './PositionPicker.css';
 
 class PositionPicker extends Component {
 
-  handleChange = (e) => {
-    this.props.onFilterList(e.target.value);
+  handleChange = (position) => {
+    this.props.onFilterList(position);
   }
 
   render() {
     return (
     <div className='picker-div'>
-        <button value="All" onClick={this.handleChange}>All</button>
-        <button value="QB" onClick={this.handleChange}>QB</button>
-        <button value="RB" onClick={this.handleChange}>RB</button>
-        <button value="WR" onClick={this.handleChange}>WR</button>
-        <button value="TE" onClick={this.handleChange}>TE</button>
+        <Button className="test" variant="contained" color="primary" onClick={() => { this.handleChange('All') }}>All</Button>
+        <Button variant="contained" color="primary" onClick={() => { this.handleChange('QB') }}>QB</Button>
+        <Button variant="contained" color="primary" onClick={() => { this.handleChange('RB') }}>RB</Button>
+        <Button variant="contained" color="primary" onClick={() => { this.handleChange('WR') }}>WR</Button>
+        <Button variant="contained" color="primary" onClick={() => { this.handleChange('TE') }}>TE</Button>
     </div>
   );
   }
