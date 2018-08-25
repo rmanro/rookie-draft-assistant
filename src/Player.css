@@ -1,3 +1,7 @@
 .Players-div {
   border: 1pt solid;
 }
+
+.target {
+  color: red;
+}
