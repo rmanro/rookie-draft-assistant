@@ -10,13 +10,13 @@ class Player extends Component {
   }
   
   render() {
-    const { Rookies, Rank, Pos, color, visible, target } = this.props.player;
+    const { Rookies, Rank, Pos, color, visible, target, Team } = this.props.player;
 
     if (!visible) return null;
 
     return ( 
       <Card className="Players-div" style={{background:color}} onClick={this.handleChangeColor}>
-        <h1>{Rank}. {Rookies}</h1><h2>{Pos}{target && <span className="target"> TARGET</span>}
+        <h1>{Rank}. {Rookies} <span className="team">{Team}</span></h1><h2>{Pos}{target && <span className="target"> TARGET</span>}
         {color === '#4CAF50' && <strong> - Drafted</strong>}</h2>
       </Card>
     );

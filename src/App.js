@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 import playersData from './csvjson';
 import Player from './Player';
@@ -15,6 +16,10 @@ class App extends Component {
     this.setState({ 
       players: playersData.map(player => Object.assign({}, player, { color: 'white', visible: true }))
     });
+  }
+
+  componentDidUpdate() {
+    ReactDOM.findDOMNode(this).scrollIntoView();
   }
 
   handleFilterChange = (position) => {
