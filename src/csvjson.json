@@ -88,7 +88,8 @@
     "Best": 2,
     "Worst": 20,
     "Avg": 7.2,
-    "Std Dev": 5.4
+    "Std Dev": 5.4,
+    "IR": true
   },
   {
     "Rank": 8,
@@ -480,7 +481,8 @@
     "Best": 27,
     "Worst": 52,
     "Avg": 35.6,
-    "Std Dev": 6.9
+    "Std Dev": 6.9,
+    "target": true
   },
   {
     "Rank": 38,
@@ -493,7 +495,8 @@
     "Best": 27,
     "Worst": 44,
     "Avg": 36.5,
-    "Std Dev": 4.6
+    "Std Dev": 4.6,
+    "IR": true
   },
   {
     "Rank": 39,
