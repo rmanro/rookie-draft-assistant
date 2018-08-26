@@ -9,7 +9,8 @@ import AppBar from '@material-ui/core/AppBar';
 class App extends Component {
 
   state = {
-    players: []
+    players: [],
+    drafting: false
   };
 
   componentDidMount = () => {
@@ -19,13 +20,14 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    ReactDOM.findDOMNode(this).scrollIntoView();
+   if(!this.state.drafting) ReactDOM.findDOMNode(this).scrollIntoView();
   }
 
   handleFilterChange = (position) => {
     if (position === 'All') 
       this.setState({ 
-        players: this.state.players.map(player => Object.assign({}, player, { visible: true }))
+        players: this.state.players.map(player => Object.assign({}, player, { visible: true })),
+        drafting: false
       });
     else
     this.setState({ players: this.state.players.map(player => 
@@ -33,13 +35,13 @@ class App extends Component {
         Object.assign({}, player, { visible: true })
       :
         Object.assign({}, player, { visible: false })
-      )});
+      ), drafting: false});
   }
 
   handleColorChange = (color, rank) => {
     this.setState({ players: this.state.players.map(player => 
       (player.Rank === rank) ? Object.assign({}, player, { color: color }) : player 
-    )});
+    ), drafting: true});
   }
 
   render() {
